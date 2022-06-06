@@ -1,12 +1,28 @@
-import React from "react";
+import "./App.css";
+import Navbar from "./components/Navbar/Navbar";
+import Products from "./components/Products/Products";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import {Routes,Route} from 'react-router-dom'
+import Link from 'react-router-dom'
+import RequiredAuth from "./hoc/RequiredAuth";
 
-import Products from "./components/Products";
-
-const App = () => {
-  return <div>
+function App() {
+  return (
+    <div className="App">
+  <Navbar/>
+  <Routes>
+  <Route path="/" element={<Home/>} />
+    <Route path="/login" element={ <Login/> } />
+    <Route path="/products" element={ <Products/>} />
     
-    <Products/>
-    </div>;
-};
+  </Routes>
+     
+     
+
+
+    </div>
+  );
+}
 
 export default App;
